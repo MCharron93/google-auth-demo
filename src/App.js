@@ -1,6 +1,19 @@
+import React from 'react'
 import './App.css';
 
-function App() {
+class App extends React.Component() {
+
+  componentDidMount(){
+    console.log("Hello, I mounted correctly")
+
+    window.gapi.load('auth2', () => {
+      window.gapi.auth2.init({
+        client_id: ''
+      })
+    })
+  }
+
+render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -9,6 +22,7 @@ function App() {
       </header>
     </div>
   );
+}
 }
 
 export default App;
